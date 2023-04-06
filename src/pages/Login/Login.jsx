@@ -52,11 +52,11 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if(email && password){
-      dispatch(login({email, password}));
+    if (email && password) {
+      dispatch(login({ email, password }));
       navigate("/profile");
     }
-  }
+  };
 
   return (
     <LoginContainer>
@@ -64,11 +64,21 @@ const Login = () => {
       <form>
         <FormController>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="email" onChange={(ev) => setEmail(ev.target.value)} />
+          <input
+            type="email"
+            id="email"
+            placeholder="email"
+            onChange={(ev) => setEmail(ev.target.value)}
+          />
         </FormController>
         <FormController>
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="password" onChange={(ev) => setPassword(ev.target.value)} />
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            onChange={(ev) => setPassword(ev.target.value)}
+          />
         </FormController>
         <button onClick={handleLogin}>Login</button>
       </form>
